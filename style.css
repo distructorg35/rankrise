@@ -1,0 +1,23 @@
+/* Basic CSS reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Logo styling */
+#logo {
+    max-width: 100px; /* Adjust based on your design */
+    height: auto;
+}
