@@ -130,48 +130,7 @@
     </header>
     <main>
         <section class="articles">
-            <article>
-                <div class="date">June 10, 2024</div>
-                <h2>Coaxial Cable</h2>
-                <p>This is a brief description of the first article. It provides an overview of the main points covered.</p>
-                <img src="coaxial_cable.jpg" alt="Coaxial Cable">
-                <a href="coaxial_cable.html">Read more</a>
-            </article>
-            <article>
-                <div class="date">June 9, 2024</div>
-                <h2>Article Title 2</h2>
-                <p>This is a brief description of the second article. It provides an overview of the main points covered.</p>
-                <img src="article2.jpg" alt="Article 2">
-                <a href="article2.html">Read more</a>
-            </article>
-            <article>
-                <div class="date">June 8, 2024</div>
-                <h2>Article Title 3</h2>
-                <p>This is a brief description of the third article. It provides an overview of the main points covered.</p>
-                <img src="article3.jpg" alt="Article 3">
-                <a href="article3.html">Read more</a>
-            </article>
-            <article>
-                <div class="date">June 7, 2024</div>
-                <h2>Article Title 4</h2>
-                <p>This is a brief description of the fourth article. It provides an overview of the main points covered.</p>
-                <img src="article4.jpg" alt="Article 4">
-                <a href="article4.html">Read more</a>
-            </article>
-            <article>
-                <div class="date">June 6, 2024</div>
-                <h2>Article Title 5</h2>
-                <p>This is a brief description of the fifth article. It provides an overview of the main points covered.</p>
-                <img src="article5.jpg" alt="Article 5">
-                <a href="article5.html">Read more</a>
-            </article>
-            <article>
-                <div class="date">June 5, 2024</div>
-                <h2>Article Title 6</h2>
-                <p>This is a brief description of the sixth article. It provides an overview of the main points covered.</p>
-                <img src="article6.jpg" alt="Article 6">
-                <a href="article6.html">Read more</a>
-            </article>
+            <!-- Articles will be dynamically generated here -->
         </section>
     </main>
     <footer>
@@ -183,5 +142,21 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+    <script>
+        // JavaScript to dynamically generate 100 articles
+        const articlesContainer = document.querySelector('.articles');
+
+        for (let i = 1; i <= 100; i++) {
+            const article = document.createElement('article');
+            article.innerHTML = `
+                <div class="date">June ${100 - i + 1}, 2024</div>
+                <h2>Article Title ${i}</h2>
+                <p>This is a brief description of article number ${i}. It provides an overview of the main points covered.</p>
+                <img src="article${i % 6 + 1}.jpg" alt="Article ${i}">
+                <a href="article${i}.html">Read more</a>
+            `;
+            articlesContainer.appendChild(article);
+        }
+    </script>
 </body>
 </html>
