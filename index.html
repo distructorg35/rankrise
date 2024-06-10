@@ -392,6 +392,52 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js">document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add active class to navigation on scroll
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('nav ul li a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLi.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    });
+
+    // Handle contact form submission
+    const contactForm = document.querySelector('.contact form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const email = contactForm.querySelector('input[type="email"]').value;
+        const message = contactForm.querySelector('textarea').value;
+
+        if (name && email && message) {
+            alert('Thank you for your message!');
+            contactForm.reset();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+});
+</script>
 </body>
 </html>
