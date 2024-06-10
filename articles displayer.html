@@ -4,58 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(90deg, #77b300, #4c9900);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        .articles {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        article {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        article h2 {
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        article p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        article a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+            color: #1d6fa5;
+        }
+
+        article img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-main {
-    padding: 1rem;
-}
-
-.articles {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-article {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-article h2 {
-    margin-top: 0;
-}
-
-article a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-article a:hover {
-    text-decoration: underline;
-}
-
-</style>
-
-
-    
 <body>
     <header>
         <h1>My Articles</h1>
@@ -63,11 +89,10 @@ article a:hover {
     <main>
         <section class="articles">
             <article>
-                <h2>coaxial cable</h2>
+                <h2>Coaxial Cable</h2>
                 <p>This is a brief description of the first article. It provides an overview of the main points covered.</p>
-                <img src="coaxial cable.jpg">
-                <br>
-                <a href="coaxial cable.html">Read more</a>
+                <img src="coaxial_cable.jpg" alt="Coaxial Cable">
+                <a href="coaxial_cable.html">Read more</a>
             </article>
             <article>
                 <h2>Article Title 2</h2>
