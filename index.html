@@ -4,34 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEO Expert Services</title>
+    <meta name="description" content="Professional SEO services to improve your online presence and drive traffic to your website.">
+    <meta name="keywords" content="SEO, search engine optimization, keyword research, on-page SEO, link building, technical SEO">
     <meta name="google-site-verification" content="HmahkvPEmfVAplIE0sZR2GoIF2X4cnD88LvwNKQ7AWU" />
     <meta name="google-site-verification" content="sH_FyqM38DjdScbLzo3Wukg1i7dLtOxsE147O7OTfpI" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header styling */
-        header {
-            background-color: #f8f8f8;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Logo styling */
-        #logo {
-            max-width: 100px; /* Adjust based on your design */
-            height: auto;
-        }
+        /* Global styles */
         * {
             margin: 0;
             padding: 0;
@@ -55,6 +36,9 @@
             color: #fff;
             padding: 20px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header a {
@@ -66,25 +50,18 @@
         }
 
         header ul {
-            padding: 0;
             list-style: none;
+            display: flex;
         }
 
         header li {
-            display: inline;
-            padding: 0 20px;
+            margin: 0 10px;
         }
 
         header .logo {
-            float: left;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 24px;
-        }
-
-        header nav {
-            float: right;
-            margin-top: 10px;
         }
 
         header a:hover {
@@ -310,14 +287,12 @@
         </div>
     </header>
 
-
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2> </div>
+            <h2>Our Services</h2>
             <div class="service-item">
                 <i class="fas fa-search"></i>
-                <a href="https://rankrise.site/keyword%20generator"> <b><i>Keyword generator</i></b>
-                </a>
+                <a href="https://rankrise.site/keyword%20generator"><strong>Keyword Generator</strong></a>
                 <p>Identify the best keywords to target for optimal search performance.</p>
             </div>
             <div class="service-item">
@@ -349,21 +324,21 @@
         <div class="container">
             <h2>Our Portfolio</h2>
             <div class="portfolio-item">
-                <img src="portfolio1.jpg" alt="Project 1">
+                <img src="portfolio1.jpg" alt="Project 1" loading="lazy">
                 <div class="portfolio-info">
                     <h3>Project Title</h3>
                     <p>Project Description</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="portfolio2.jpg" alt="Project 2">
+                <img src="portfolio2.jpg" alt="Project 2" loading="lazy">
                 <div class="portfolio-info">
                     <h3>Project Title</h3>
                     <p>Project Description</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="portfolio3.jpg" alt="Project 3">
+                <img src="portfolio3.jpg" alt="Project 3" loading="lazy">
                 <div class="portfolio-info">
                     <h3>Project Title</h3>
                     <p>Project Description</p>
@@ -417,52 +392,53 @@
         </div>
     </footer>
 
-    <script src="script.js">document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add active class to navigation on scroll
+            const sections = document.querySelectorAll('section');
+            const navLi = document.querySelectorAll('nav ul li a');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLi.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').includes(current)) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+
+            // Handle contact form submission
+            const contactForm = document.querySelector('.contact form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = contactForm.querySelector('input[type="text"]').value;
+                const email = contactForm.querySelector('input[type="email"]').value;
+                const message = contactForm.querySelector('textarea').value;
+
+                if (name && email && message) {
+                    alert('Thank you for your message!');
+                    contactForm.reset();
+                } else {
+                    alert('Please fill in all fields.');
+                }
             });
         });
-    });
-
-    // Add active class to navigation on scroll
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('nav ul li a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLi.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href').includes(current)) {
-                a.classList.add('active');
-            }
-        });
-    });
-
-    // Handle contact form submission
-    const contactForm = document.querySelector('.contact form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
-
-        if (name && email && message) {
-            alert('Thank you for your message!');
-            contactForm.reset();
-        } else {
-            alert('Please fill in all fields.');
-        }
-    });
-});
-</script>
+    </script>
 </body>
 </html>
