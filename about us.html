@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SEO Experts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .header {
+            background: #0066cc;
+            padding: 1em 0;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+
+        .about-section {
+            background: #f4f4f4;
+            padding: 4em 1em;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 2em;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .team-member {
+            background: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1em;
+        }
+
+        .team-member h2 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Document is fully loaded');
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">SEO Experts</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h1>About Us</h1>
+            <p>Welcome to SEO Experts! We are a team of dedicated professionals passionate about helping your business rank higher on search engines and achieve online success.</p>
+            <div class="team">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member">
+                    <h2>John Doe</h2>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member">
+                    <h2>Jane Smith</h2>
+                    <p>Head of SEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member">
+                    <h2>Mike Johnson</h2>
+                    <p>Content Strategist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 SEO Experts. All rights reserved.</p>
+    </footer>
+</body>
+</html>
