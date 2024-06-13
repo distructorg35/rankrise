@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(90deg, #77b300, #4c9900);
+            background: linear-gradient(90deg, #0056b3, #003c80); /* Updated blue gradient */
             color: #fff;
             padding: 1.5rem 0;
             text-align: center;
@@ -101,6 +101,23 @@
             right: 1rem;
         }
 
+        .share-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .share-buttons a {
+            color: #3498db;
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .share-buttons a:hover {
+            color: #1d6fa5;
+        }
+
         footer {
             background: #333;
             color: #fff;
@@ -127,7 +144,7 @@
 </head>
 <body>
     <header>
-        <h1>My Articles</h1>
+        <h1 style="color: white;"> My Articles</h1>
     </header>
     <main>
         <section class="articles">
@@ -137,21 +154,36 @@
                 <h2>Article Title 1</h2>
                 <p>This is a brief description of article number 1. It provides an overview of the main points covered.</p>
                 <img src="article1.jpg" alt="Article 1">
-                <a href="article1.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article1.html" style="color: #ff7e5f;">Read more</a>
             </article>
             <article>
                 <div class="date">June 2, 2024</div>
                 <h2>Article Title 2</h2>
                 <p>This is a brief description of article number 2. It provides an overview of the main points covered.</p>
                 <img src="article2.jpg" alt="Article 2">
-                <a href="article2.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article2.html" style="color: #ff7e5f;">Read more</a>
             </article>
             <article>
                 <div class="date">June 3, 2024</div>
                 <h2>Article Title 3</h2>
                 <p>This is a brief description of article number 3. It provides an overview of the main points covered.</p>
                 <img src="article3.jpg" alt="Article 3">
-                <a href="article3.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article3.html" style="color: #ff7e5f;">Read more</a>
             </article>
             <!-- Repeat similar blocks for articles 4 to 100 -->
             <article>
@@ -159,21 +191,36 @@
                 <h2>Article Title 4</h2>
                 <p>This is a brief description of article number 4. It provides an overview of the main points covered.</p>
                 <img src="article4.jpg" alt="Article 4">
-                <a href="article4.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article4.html" style="color: #ff7e5f;">Read more</a>
             </article>
             <article>
                 <div class="date">June 5, 2024</div>
                 <h2>Article Title 5</h2>
                 <p>This is a brief description of article number 5. It provides an overview of the main points covered.</p>
                 <img src="article5.jpg" alt="Article 5">
-                <a href="article5.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article5.html" style="color: #ff7e5f;">Read more</a>
             </article>
             <article>
                 <div class="date">June 6, 2024</div>
                 <h2>Article Title 6</h2>
                 <p>This is a brief description of article number 6. It provides an overview of the main points covered.</p>
                 <img src="article6.jpg" alt="Article 6">
-                <a href="article6.html">Read more</a>
+                <div class="share-buttons">
+                    <a href="#">Share on Facebook</a>
+                    <a href="#">Share on Twitter</a>
+                    <a href="#">Share on LinkedIn</a>
+                </div>
+                <a href="article6.html" style="color: #ff7e5f;">Read more</a>
             </article>
         </section>
     </main>
@@ -186,5 +233,4 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-</body>
-</html>
+</body
