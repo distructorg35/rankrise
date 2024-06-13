@@ -128,9 +128,25 @@
             }
 
             if (isValid) {
-                alert('Message sent successfully!');
-                // Here you can add code to send the form data to your server
-                document.getElementById('contactForm').reset();
+                fetch('https://your-server-endpoint.com/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, subject, message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Message sent successfully!');
+                        document.getElementById('contactForm').reset();
+                    } else {
+                        alert('There was an error sending your message. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('There was an error sending your message. Please try again.');
+                });
             }
         });
     </script>
