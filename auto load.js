@@ -1,5 +1,5 @@
 (async function() {
-    const repo = "your-username/your-repo-name"; // Replace this!
+    const repo = "rankrise.site"; // Replace this!
     const response = await fetch(`https://api.github.com/repos/${repo}/contents/articles`);
     const files = await response.json();
 
