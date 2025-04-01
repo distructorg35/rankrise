@@ -1,34 +1,34 @@
-// Auto-load articles from the /articles/ folder
-(async function() {
+// Zero-config auto-loader (put this in /js/auto-load.js)
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Auto-load articles
     try {
-        // Fetch list of articles from GitHub
-        const repo = "rankrise.site"; // REPLACE THIS
-        const response = await fetch(`https://api.github.com/repos/${repo}/contents/articles`);
-        const files = await response.json();
-
-        // Process each HTML file
-        for (const file of files) {
-            if (file.name.endsWith('.html')) {
-                // Get clean title (e.g., "lahore-history.html" → "Lahore History")
-                const title = file.name
-                    .replace('.html', '')
-                    .replace(/-/g, ' ')
-                    .replace(/\b\w/g, l => l.toUpperCase());
-
-                // Fetch article content to extract preview
-                const articleResponse = await fetch(file.download_url);
-                const articleHTML = await articleResponse.text();
-                
-                // Extract first paragraph as preview
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(articleHTML, 'text/html');
-                const firstParagraph = doc.querySelector('p')?.textContent || "Read more...";
-
-                // Add to homepage
-                addArticle(title, firstParagraph, "General", file.path);
-            }
-        }
+        const articles = await loadArticles();
+        articles.forEach(file => {
+            const title = formatTitle(file);
+            addArticle(title, "Read more →", "General", `/articles/${file}`);
+        });
     } catch (error) {
-        console.error("Failed to load articles:", error);
+        addArticle("Breaking News", "New articles coming soon!", "Updates", "#");
     }
-})();
+
+    // 2. Auto-link contact page
+    const contactBtn = document.getElementById('contactBtn');
+    if (contactBtn) contactBtn.href = "contact.us.html";
+
+    // Helper functions
+    async function loadArticles() {
+        const response = await fetch('/articles/?nocache=' + Date.now());
+        const html = await response.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        return Array.from(doc.querySelectorAll('a[href$=".html"]'))
+                   .map(link => link.href.split('/').pop())
+                   .filter(name => !name.startsWith('.'));
+    }
+
+    function formatTitle(filename) {
+        return filename
+            .replace('.html', '')
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, l => l.toUpperCase());
+    }
+});
